@@ -1,4 +1,5 @@
 class City:
+    
     def __init__(self, name, country, capital_city, population, visited, review, id=None, country_id=None):
         self.name = name
         self.country = country

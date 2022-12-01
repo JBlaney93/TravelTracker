@@ -1,4 +1,5 @@
 class Country:
+    
     def __init__ (self, name, language, continent, id=None):
         self.name = name
         self.language = language
