@@ -38,3 +38,15 @@ def select_user_by_id(id):
         result = results[0]
         selected_user = User(result['name'], result['id'])
     return selected_user
+
+
+def delete(id):
+    sql = "DELETE FROM users WHERE id=%s"
+    values = [id]
+    run_sql(sql, values)
+
+
+def update(user):
+    sql = "UPDATE SET (name) VALUES=(%s) WHERE id=%s"
+    values = [user.name, user.id]
+    run_sql(sql, values)
