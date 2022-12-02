@@ -22,6 +22,25 @@ def select_all():
     return selected_countries
 
 
+def select_country_by_id(id):
+    selected_country = None
+    sql = "SELECT * FROM countries WHERE id=%s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        selected_country = Country(result['name'], result['language'], result['continent'], result['id'])
+    return selected_country
+
+
 def delete_all():
     sql = "DELETE FROM countries"
     run_sql(sql)
+
+
+def delete(id):
+    sql = "DELETE FROM countries WHERE id=%s"
+    values = [id]
+    run_sql(sql,values)
+

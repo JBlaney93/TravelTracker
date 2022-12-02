@@ -23,11 +23,6 @@ def select_all():
     return selected_users
 
 
-def delete_all():
-    sql = "DELETE FROM users"
-    run_sql(sql)
-
-
 def select_user_by_id(id):
     selected_user = None
     sql = "SELECT * FROM users WHERE id=%s"
@@ -38,6 +33,11 @@ def select_user_by_id(id):
         result = results[0]
         selected_user = User(result['name'], result['id'])
     return selected_user
+
+
+def delete_all():
+    sql = "DELETE FROM users"
+    run_sql(sql)
 
 
 def delete(id):
