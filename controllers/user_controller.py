@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from models.user import User
+from repositories import user_repository
+
 from app import app
 
 # EXAMPLES ARE USING BLUEPRINT BUT I DON'T KNOW HOW TO USE IT
@@ -12,8 +14,8 @@ from app import app
 
 @app.route("/users") 
 def users():
-        user = User('James')
-        return render_template("users/index.html", users=[user])
+        users = user_repository.select_all()
+        return render_template("users/index.html", users=users)
 
 
 
