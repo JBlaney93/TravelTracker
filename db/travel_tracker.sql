@@ -11,17 +11,16 @@ CREATE TABLE users (
 CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    language VARCHAR(255),
-    continent VARCHAR(255)
+    continent VARCHAR(255),
+    user_id INT REFERENCES users(id)
 );
 
 CREATE TABLE cities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    country VARCHAR(255),
     capital_city BOOLEAN,
     review TEXT,
-    country_id INT NOT NULL REFERENCES countries(id)
+    country INT NOT NULL REFERENCES countries(id)
 );
 
 

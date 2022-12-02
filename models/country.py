@@ -1,8 +1,8 @@
 class Country:
 
-    def __init__ (self, name, language, continent, id=None):
+    def __init__ (self, name, user, continent, id=None):
         self.name = name
-        self.language = language
+        self.user = user
         self.continent = continent
         self.cities = []
         self.id = id
