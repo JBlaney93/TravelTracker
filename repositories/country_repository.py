@@ -34,3 +34,14 @@ def delete(id):
     values = [id]
     run_sql(sql,values)
 
+
+def select_country_by_id(id):
+    selected_country = None
+    sql = "SELECT * FROM countries WHERE id=%s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        selected_country = Country(result['name'], result['cities'], result['visited'], result['id'])
+    return selected_country

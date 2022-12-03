@@ -14,7 +14,7 @@ user_repository.save(user1)
 
 country1 = Country('Scotland', 'Glasgow, Edinburgh', True)
 country_repository.save(country1)
-country2 = Country('England', 'Manchester, Leeds, Newcastle', True)
+country2 = Country('England', 'Manchester, Leeds, Newcastle', False)
 country_repository.save(country2)
 
 memory1 = Memory(user1, country1, 'Heart of Scotland')

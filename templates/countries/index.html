@@ -13,7 +13,12 @@
                 {{ country.cities }}
             </li>
             <li>
-                {{ country.visted }}
+               {% if country.visited %}
+                    "Visited"                
+               {% else %}
+                    "not"
+               {% endif %}
+                
             </li>
 
         {% endfor %}
