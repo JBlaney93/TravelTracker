@@ -1,6 +1,7 @@
-DROP TABLE IF EXISTS cities;
-DROP TABLE IF EXISTS countries;
+DROP TABLE IF EXISTS memories;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS countries;
+
 
 
 CREATE TABLE users (
@@ -11,17 +12,16 @@ CREATE TABLE users (
 CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    continent VARCHAR(255),
-    user_id INT REFERENCES users(id)
+    cities VARCHAR(255),
+    visited BOOLEAN
 );
 
-CREATE TABLE cities (
+CREATE TABLE memories (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    visited BOOLEAN,
-    country_id INT NOT NULL REFERENCES countries(id) ON DELETE CASCADE
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    country_id INT NOT NULL REFERENCES countries(id) ON DELETE CASCADE,
+    memory TEXT
 );
 
 
-    -- do i need user_id in cities?
-    -- should country_id in cities be SERIAL NOT NULL REFERENCES countries(id)
+
