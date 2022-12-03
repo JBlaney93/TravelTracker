@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        new_country = Country(row['name'], user, row['cities'], row['visited'], row['id'])
+        new_country = Country(row['name'], row['cities'], row['visited'], row['id'])
         selected_countries.append(new_country)
     return selected_countries
 
