@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Add new country feature here!</p>
+
+    <form action="/countries" method="post">
+
+        <label for="country_name">Country</label>
+        <input type="text" name="country_name" id="country_name"><br>
+        
+        <label for="cities">Cities</label>
+        <input type="text" name="cities" id="cities"><br>
+
+        <label for="visited">Visited?</label>
+        <input type="checkbox" name="visited" id="visited"><br>
+
+        <input type="submit" value="Save Country">
+
+    </form>
+{% endblock %}

@@ -3,6 +3,8 @@
 {% block content %}
     <h1>Countries</h1>
 
+    <a href="/countries/new">Add New Country</a>
+
     <ul>
         {% for country in countries %}
         
@@ -14,9 +16,9 @@
             </li>
             <li>
                {% if country.visited %}
-                    "Visited"                
+                    Visited               
                {% else %}
-                    "not"
+                    Not
                {% endif %}
                 
             </li>
