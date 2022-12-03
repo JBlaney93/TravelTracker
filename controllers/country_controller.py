@@ -29,3 +29,10 @@ def save_country():
     country_repository.save(new_country)
 
     return redirect('/countries')
+
+
+@app.route('/countries/delete/<id>', methods=['POST'])
+def delete_country(id):
+    country_repository.delete(id)
+
+    return redirect('/countries')
