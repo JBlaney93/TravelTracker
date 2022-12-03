@@ -32,3 +32,10 @@ def save_user():
         user_repository.save(new_user)
 
         return redirect('/users')
+
+
+@app.route('/users/delete/<id>', methods=['POST'])
+def delete_user(id):
+        user_repository.delete(id)
+
+        return redirect('/users')

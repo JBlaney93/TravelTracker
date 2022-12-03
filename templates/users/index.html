@@ -14,7 +14,11 @@
                     {{ user.id }}
                 </li>
 
+                <form action="/users/delete/{{ user.id }}" method="POST">
+                    <input type="submit" value="Delete User">
+                </form>
+
             {% endfor %}
-         
+                
     </ul>
 {% endblock %}
