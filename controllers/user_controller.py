@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from models.user import User
 from repositories import user_repository
 
@@ -12,10 +12,23 @@ from app import app
 # INDEX
 # GET '/users'
 
-@app.route("/users") 
+@app.route('/users') 
 def users():
         users = user_repository.select_all()
-        return render_template("users/index.html", users=users)
+        return render_template('users/index.html', users=users)
 
 
+@app.route('/users/new')
+def new_user():
+        return render_template('users/new_user.html')
 
+
+@app.route('/users', methods=['POST'])
+def save_user():
+        form_data = request.form
+        name = form_data['user_name']
+
+        new_user = User(name)
+        user_repository.save(new_user)
+
+        return redirect('/users')
