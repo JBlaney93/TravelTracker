@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Add new memory feature here!</p>
+
+    <form action="/memories" method="post">
+       
+        <label for="user">Select User</label>
+            <select name="user_id" id="user">
+                {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.name }}</option>
+                {% endfor %}
+            </select>
+
+        <label for="country">Select Country</label>
+            <select name="country_id" id="country">
+                {% for country in countries %}
+                    <option value="{{ country.id }}">{{ country.name }}</option>
+                {% endfor %}
+            </select>
+
+
+        <label for="memory">Memory</label>
+        <input type="text" name="memory" id="memory">
+
+        <input type="submit" value="Save Memory">
+
+    </form>
+{% endblock %}
