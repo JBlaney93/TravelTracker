@@ -11,7 +11,10 @@
                 {{ memory.memory }}
             </li>
             <li>
-                {{ memory.user.id }}
+                {{ memory.user.name }}
+            </li>
+            <li>
+                {{ memory.country.name }}
             </li>
 
             <form action="/memories/delete/{{ memory.id }}" method="POST">

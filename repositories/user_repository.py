@@ -65,3 +65,4 @@ def find_user_countries(user):
         user_countries.append(country)
 
     return user_countries
+

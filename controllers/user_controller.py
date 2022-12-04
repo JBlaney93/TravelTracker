@@ -16,7 +16,7 @@ from app import app
 def users():
         users = user_repository.select_all()
         return render_template('users/index.html', users=users)
-
+        
 
 @app.route('/users/new')
 def new_user():

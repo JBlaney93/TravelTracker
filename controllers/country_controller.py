@@ -36,3 +36,10 @@ def delete_country(id):
     country_repository.delete(id)
 
     return redirect('/countries')
+
+
+@app.route('/countries/<id>')
+def show(id):
+    country = country_repository.select_country_by_id(id)
+    return render_template('countries/country.html', country=country)
+
