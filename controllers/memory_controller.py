@@ -35,7 +35,7 @@ def save_memory():
     return redirect('/memories')
 
 
-@app.route('/memoires/delete/<id>', methods=['POST'])
+@app.route('/memories/delete/<id>', methods=['POST'])
 def delete_memory(id):
     memory_repository.delete(id)
 
