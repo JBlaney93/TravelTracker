@@ -10,6 +10,10 @@
             <li>
                 {{ memory.memory }}
             </li>
+
+            <form action="/memories/delete/{{ memory.id }}" method="POST">
+                <input type="submit" value="Delete Memory">
+            </form>
         {% endfor %}
     </ul>
     

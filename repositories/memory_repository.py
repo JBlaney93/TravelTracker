@@ -32,3 +32,9 @@ def select_all():
         new_memory = Memory(user, location, row['memory'], row['id'])
         selected_memories.append(new_memory)
     return selected_memories
+
+
+def delete(id):
+    sql = "DELETE FROM memories WHERE id=%s"
+    values = [id]
+    run_sql(sql, values)
