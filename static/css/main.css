@@ -76,7 +76,7 @@ body {
 /* header */
 
 .header {
-    background-color: #646564;
+    background-color: #273336;
     color: white;
     padding: 1rem 0;
 }
@@ -88,7 +88,7 @@ body {
 }
 
 .nav-bar {
-    background-color: #949594;
+    background-color: #4C5F6B;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -247,6 +247,25 @@ body {
     padding: 0;
 }
 
+/* New Country */
+
+.new-country__header {
+    font-weight: 100;
+}
+
+/* .new-country {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.new-country__visited-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+}
+
 /* Memories */
 
 .memories-header {
@@ -272,11 +291,25 @@ body {
     background-color: white;
     padding: 1rem;
     border-radius: 6px;
-    flex: 0 0 60%;
+    flex: 0 0 95%;
 }
 
 .memories__item-country {
     font-size: 26px;
     padding: 0;
     margin: 0;
+}
+
+.memories__item-name{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgb(196, 195, 195);
+    padding: 0;
+    margin: 4px 0 0 0;
+}
+
+/* Add New Memory */
+
+.new-memory__header {
+    font-weight: 100;
 }

@@ -38,3 +38,17 @@ def delete(id):
     sql = "DELETE FROM memories WHERE id=%s"
     values = [id]
     run_sql(sql, values)
+
+
+def select_country_id(country_id):
+    selected_memories = []
+    sql = "SELECT * FROM memories WHERE country_id = %s"
+    values = [country_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        user = user_repository.select_user_by_id(row['user_id'])
+        location = country_repository.select_country_by_id(row['country_id'])
+        new_memory = Memory(user, location, row['memory'], row['id'])
+        selected_memories.append(new_memory)
+    return selected_memories

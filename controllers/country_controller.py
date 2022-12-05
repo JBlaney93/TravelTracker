@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from models.country import Country 
-from repositories import country_repository
+from repositories import country_repository, memory_repository
 
 from app import app
 
@@ -40,8 +40,9 @@ def delete_country(id):
 
 @app.route('/countries/<id>')
 def show(id):
+    memories = memory_repository.select_country_id(id)
     country = country_repository.select_country_by_id(id)
-    return render_template('countries/country.html', country=country)
+    return render_template('countries/country.html', country=country, memories=memories)
 
 
 @app.route('/countries/edit/<id>', methods=['GET'])

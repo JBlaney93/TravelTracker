@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Add new memory feature here!</p>
+    <h2 class="new-memory__header">Add New Memory</h2>
 
     <form action="/memories" method="post">
        
-        <label for="user">Select User</label>
+        <label for="user">Select Saved User</label>
             <select name="user_id" id="user">
                 {% for user in users %}
                     <option value="{{ user.id }}">{{ user.name }}</option>
                 {% endfor %}
-            </select>
+            </select><br>
 
-        <label for="country">Select Country</label>
+        <label for="country">Select Saved Country</label>
             <select name="country_id" id="country">
                 {% for country in countries %}
                     <option value="{{ country.id }}">{{ country.name }}</option>
                 {% endfor %}
-            </select>
+            </select><br>
 
 
-        <label for="memory">Memory</label>
-        <input type="text" name="memory" id="memory">
+        <!-- <label for="memory">Memory</label> -->
+        <textarea type="text" name="memory" id="memory" rows="10" cols="60" placeholder="Memory..."></textarea><br>
 
-        <input type="submit" value="Save Memory">
+        <input type="submit" value="Save Memory" class="add_button">
 
     </form>
 {% endblock %}

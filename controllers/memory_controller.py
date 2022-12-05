@@ -26,7 +26,7 @@ def save_memory():
     user_id = form_data['user_id']
     country_id = form_data['country_id']
 
-    user = user_repository.select_user_by_id(12)
+    user = user_repository.select_user_by_id(user_id)
     country = country_repository.select_country_by_id(country_id)
 
     new_memory = Memory(user, country, memory)

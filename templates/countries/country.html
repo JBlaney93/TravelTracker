@@ -11,6 +11,11 @@
     <h3 class="country__header">Visited</h3>
     <p class="country__p">{{ country.visited }}</p>
 
+    {% for memory in memories %}
+        <a href="/memories/{{ memory.id }}" class="view_button">{{ memory.user.name }}</a>
+
+    {% endfor %}
+
     <p><a href="/countries/edit/{{ country.id }}" class="view_button">Edit</a></p>
 
 {% endblock %}
