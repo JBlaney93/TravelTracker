@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <li>{{ country.name }}</li>
-    <li>{{ country.cities }}</li>
-    <li>{{ country.visited }}</li>
-    <li><a href="/countries/edit/{{ country.id }}">Edit Country</a></li>
+
+    <h3 class="country__header">Country</h3>
+    <p class="country__p">{{ country.name }}</p>
+
+    <h3 class="country__header">Cities</h3>
+    <p class="country__p">{{ country.cities }}</p>
+
+    <h3 class="country__header">Visited</h3>
+    <p class="country__p">{{ country.visited }}</p>
+
+    <p><a href="/countries/edit/{{ country.id }}" class="view_button">Edit</a></p>
+
 {% endblock %}

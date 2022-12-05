@@ -1,27 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Users</h1>
+    <section class="users-header">
+        <h2 class="users-header__title">Users</h2>
 
-    <a href="/users/new">Add New User</a>
+        <a href="/users/new" class="add_button">Add User</a>
+    </section>
 
-    <ul>
+        <ul class="users__list">
             {% for user in users %}
-                <li>
-                    {{ user.name }}
+                <li class="users__item">
+                    <p>{{ user.name }}</p>
+                    <p>{{ user.id }}</p>
+                    <form action="/users/delete/{{ user.id }}" method="POST">
+                        <input type="submit" value="Delete" class="delete_button">
+                    </form>
                 </li>
-                <!-- <li>
-                    <a href="/users/{{loop.index0}}" >View user</a>
-                </li> -->
-                <li>
-                    {{ user.id }}
-                </li>
-
-                <form action="/users/delete/{{ user.id }}" method="POST">
-                    <input type="submit" value="Delete User">
-                </form>
-
             {% endfor %}
-                
-    </ul>
+        
+        </ul>
 {% endblock %}
