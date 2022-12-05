@@ -22,8 +22,8 @@ def save_country():
     country_name = form_data['country_name']
     cities = form_data['cities']
     
-    if 'visited' in form_data:  
-        visited = True
+ 
+    visited = 'visited' in form_data
 
     new_country = Country(country_name, cities, visited)
     country_repository.save(new_country)
@@ -43,3 +43,21 @@ def show(id):
     country = country_repository.select_country_by_id(id)
     return render_template('countries/country.html', country=country)
 
+
+@app.route('/countries/edit/<id>', methods=['GET'])
+def edit_country(id):
+    country = country_repository.select_country_by_id(id)
+    return render_template('countries/edit.html', country=country)
+# this country/edit.html does not exist yet
+
+
+@app.route('/countries/<id>', methods=['POST'])
+def update_country(id):
+    form_data = request.form
+    country_name = form_data['country_name']
+    cities = form_data['cities']
+    visited = 'visited' in form_data
+
+    country = Country(country_name, cities, visited, id)
+    country_repository.update_country(country)
+    return redirect('/countries')
