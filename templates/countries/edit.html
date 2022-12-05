@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>add edit feature here</p>
+
+    <form action="/countries/{{ country.id }}" method="post">
+
+        <label for="country_name">Country</label>
+        <input type="text" name="country_name" id="country_name" value="{{ country.name }}"><br>
+        
+        <label for="cities">Cities</label>
+        <input type="text" name="cities" id="cities" value="{{ country.cities }}"><br>
+
+        <label for="visited">Visited?</label>
+        <input type="checkbox" name="visited" id="visited" {% if country.visited %} checked {% endif %}><br>
+
+        <input type="submit" value="Update Country">
+
+    </form>
+{% endblock %}

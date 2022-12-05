@@ -45,3 +45,9 @@ def select_country_by_id(id):
         result = results[0]
         selected_country = Country(result['name'], result['cities'], result['visited'], result['id'])
     return selected_country
+
+
+def update_country(country):
+    sql = "UPDATE countries SET (name, cities, visited) = (%s, %s, %s) WHERE id =%s"
+    values = [country.name, country.cities, country.visited, country.id]
+    run_sql(sql, values)
