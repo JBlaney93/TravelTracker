@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Memories</h1>
+    <section class="memories-header">
+        <h1 class="memories-header__title">Memories</h1>
+        <a href="/memories/new" class="add_button">Add Memory</a>
+    </section>
 
-    <a href="/memories/new">Add New Memory</a>
-
-    <ul>
+    <ul class="memories__list">
         {% for memory in memories %}
-            <li>
-                {{ memory.memory }}
-            </li>
-            <li>
-                {{ memory.user.name }}
-            </li>
-            <li>
-                {{ memory.country.name }}
-            </li>
+            <li class="memories__item">
 
-            <form action="/memories/delete/{{ memory.id }}" method="POST">
-                <input type="submit" value="Delete Memory">
-            </form>
+                <p class="memories__item-country">{{ memory.country.name }}</p>
+
+                <p>{{ memory.memory }}</p>
+
+                <p>{{ memory.user.name }}</p>
+
+                
+
+                <form action="/memories/delete/{{ memory.id }}" method="POST">
+                    <input type="submit" value="Delete" class="delete_button">
+                </form>
+
+            </li>
         {% endfor %}
     </ul>
     

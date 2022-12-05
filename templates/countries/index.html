@@ -1,33 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Countries</h1>
+    <section class="countries-header">
+        <h2 class="countries-header__title">Countries</h2>
+        <a href="/countries/new" class="add_button">Add Country</a>
+    </section>
 
-    <a href="/countries/new">Add New Country</a>
-
-    <ul>
+    <ul class="countries__list">
         {% for country in countries %}
         
-            <li>
-                {{ country.name }}
-            </li>
-            <li>
-                <a href="/countries/{{country.id}}">View Country</a>
-            </li>
-            <li>
-                {{ country.cities }}
-            </li>
-            <li>
-               {% if country.visited %}
-                    Visited               
-               {% else %}
-                    Not
-               {% endif %}
-            </li>
+            <li class="countries__item">
+                <h3 class="countries__item-header">{{ country.name }}</h3>
+                <hr>
 
-            <form action="/countries/delete/{{ country.id }}" method="POST">
-                <input type="submit" value="Delete Country">
-            </form>
+                <h4 class="countries__item-name">Cities</h4>
+                <p>{{ country.cities }}</p>
+
+                <h4 class="countries__item-name">Visited</h4>
+                <p>
+                    {% if country.visited %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+                </p>
+
+                <div class="countries__item-buttons">
+                    <p><a href="/countries/{{country.id}}" class="view_button">View</a></p>
+                    <form action="/countries/delete/{{ country.id }}" method="POST">
+                        <input type="submit" value="Delete" class="delete_button">
+                    </form>
+                </div>
+            </li>
 
         {% endfor %}
     </ul>

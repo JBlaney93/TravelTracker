@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Add new user feature here!</p>
 
-    <form action="/users" method="post">
+        <h2 class="new-user__header">Add New User</h2>
 
-        <input type="text" name="user_name" id="user_name"><br>
+
+
+        <form action="/users" method="post" >
+            <input type="text" name="user_name" id="user_name" placeholder="Name" class="input-box"><br>
         
-        <input type="submit" value="Save User">
+            <input type="submit" value="Save User" class="add_button">
+        </form>
 
-    </form>
+
+    <!-- is firing everything into a container like this the right way? -->
 {% endblock %}

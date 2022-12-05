@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <title>Travel Tracker</title>
 </head>
+
 <body>
-    <header>
-        <h1>Travel Tracker</h1>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Travel Tracker</h1>
+        </div>
     </header>
 
-    <nav>
-        <!-- nav bar in here -->
-        <a href="/">Home</a>
-        <a href="/users">Users</a>
-        <a href="/countries">Countries</a>
-        <a href="/memories">Memories</a>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-bar__list">
+                <li class="nav-bar__item"><a href="/" class="nav-bar__link">Home</a></li>
+                <li class="nav-bar__item"><a href="/users" class="nav-bar__link">Users</a></li>
+                <li class="nav-bar__item"><a href="/countries" class="nav-bar__link">Countries</a></li>
+                <li class="nav-bar__item"><a href="/memories" class="nav-bar__link">Memories</a></li>
+            </div>
+        </div>
     </nav>
 
     <main>
-
-        {% block content %}
+        <div class="container">
+                    {% block content %}
             
-        {% endblock %}
-    
+                    {% endblock %}
+        </div>
     </main>
 </body>
 </html>
