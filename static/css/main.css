@@ -1,0 +1,68 @@
+/* * {
+    background-color: #96E8BC;
+} */
+
+*
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* header */
+
+.header {
+    background-color: #646564;
+    color: white;
+    padding: 1rem 0;
+}
+
+.header__title {
+    margin: 0;
+    font-weight: 100;
+    font-size: 2.375rem;
+}
+
+.nav-bar {
+    background-color: #949594;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* what does top and z-index do??? */
+}
+
+.nav-bar__list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.nav-bar__item {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar__link {
+    color:inherit;
+    text-decoration: inherit;
+    display: block;
+    padding: 1rem;
+    transition: all ease .3s;
+
+    /* what is display:block doing? */
+}
+
+.nav-bar__link:hover {
+    background-color: #aeaeae;
+}
+
+/* main */
