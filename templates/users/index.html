@@ -12,9 +12,16 @@
                 <li class="users__item">
                     <p>{{ user.name }}</p>
                     <p>{{ user.id }}</p>
-                    <form action="/users/delete/{{ user.id }}" method="POST">
-                        <input type="submit" value="Delete" class="delete_button">
-                    </form>
+
+                    <div class="users__item-buttons">
+                        <a href="/users/{{ user.id }}" class="view_button">View</a>
+
+                        <a href="/users/edit/{{ user.id }}" class="add_button">Edit</a>
+
+                        <form action="/users/delete/{{ user.id }}" method="POST">
+                            <input type="submit" value="Delete" class="delete_button">
+                        </form>
+                    </div>
                 </li>
             {% endfor %}
         

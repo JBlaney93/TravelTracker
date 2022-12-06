@@ -165,6 +165,12 @@ body {
     padding: 0;
 }
 
+.users__item-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* New User */
 
 .new-user__header {

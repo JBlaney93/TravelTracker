@@ -49,7 +49,6 @@ def show(id):
 def edit_country(id):
     country = country_repository.select_country_by_id(id)
     return render_template('countries/edit.html', country=country)
-# this country/edit.html does not exist yet
 
 
 @app.route('/countries/<id>', methods=['POST'])

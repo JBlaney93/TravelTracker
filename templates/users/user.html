@@ -2,4 +2,9 @@
 
 {% block content %}
     <p>user info here </p>
+
+    <p>{{ user.name }}</p>
+    <p>{{ user.id }}</p>
+
+    <p><a href="/users/edit/{{ user.id }}">Edit</a></p>
 {% endblock %}

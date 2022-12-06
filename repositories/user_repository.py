@@ -66,3 +66,8 @@ def find_user_countries(user):
 
     return user_countries
 
+
+def update_user(user):
+    sql = "UPDATE users SET name = %s WHERE id=%s"
+    values = [user.name, user.id]
+    run_sql(sql, values)
