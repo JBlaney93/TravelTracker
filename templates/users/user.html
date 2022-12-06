@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>user info here </p>
 
-    <p>{{ user.name }}</p>
-    <p>{{ user.id }}</p>
+    <section class="user-header">
+        <h2 class="user-header__title">{{ user.name }}'s Travel Memories</h2>
+        <!-- <p>{{ user.id }}</p> -->
+        <p><a href="/users/edit/{{ user.id }}" class="add_button">Edit User</a></p>
+    </section>
 
-    <p><a href="/users/edit/{{ user.id }}">Edit</a></p>
+    <ul class="memories__list">
+        {% for memory in memories %}
+            <li class="memories__item">
+                <p class="memories__item-country">{{ memory.country.name }}</p>
+                <p>{{ memory.memory }}</p>
+
+                <div class="memories__item-buttons">
+                    <a href="/memories/edit/{{ memory.id }}" class="add_button">Edit</a>
+                    <form action="/memories/delete/{{ memory.id }}" method="POST">
+                        <input type="submit" value="Delete" class="delete_button">
+                    </form>
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+    
 {% endblock %}

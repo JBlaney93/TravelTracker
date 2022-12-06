@@ -152,23 +152,37 @@ body {
     /* can't get items to display vertically */
 }
 
+
 .users__item {
     background-color: white;
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 6px;
     flex: 0 0 60%;
     /* this 60% value is no good but forcing items onto next line */
 }
 
 .users__item p {
-    margin: 0 0 .40rem 0;
+    margin: 0 0 1rem 0;
     padding: 0;
+    font-size: 18px;
 }
 
 .users__item-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* User */
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-header__title {
+    font-weight: 100;
 }
 
 /* New User */

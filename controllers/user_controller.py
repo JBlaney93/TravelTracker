@@ -44,7 +44,8 @@ def delete_user(id):
 @app.route('/users/<id>')
 def view_user(id):
         user = user_repository.select_user_by_id(id)
-        return render_template('users/user.html', user=user)
+        memories = memory_repository.select_all()
+        return render_template('users/user.html', user=user, memories=memories)
 
 
 @app.route('/users/edit/<id>', methods=['GET'])
