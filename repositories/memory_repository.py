@@ -52,3 +52,24 @@ def select_country_id(country_id):
         new_memory = Memory(user, location, row['memory'], row['id'])
         selected_memories.append(new_memory)
     return selected_memories
+
+
+def select_memory_by_id(id):
+    selected_memory = None
+
+    sql = "SELECT * FROM memories where id=%s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        user = user_repository.select_user_by_id(result['user_id'])
+        location = country_repository.select_country_by_id(result['country_id'])
+        selected_memory = Memory(user, location, result['memory'], result['id'])
+    return selected_memory
+
+
+def update_memory(memory):
+    sql = "UPDATE memories SET (user_id, country_id, memory) = (%s, %s, %s) WHERE id=%s"
+    values = [memory.user.id, memory.country.id, memory.memory, memory.id]
+    run_sql(sql, values)

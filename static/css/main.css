@@ -314,6 +314,12 @@ body {
     margin: 4px 0 0 0;
 }
 
+.memories__item-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Add New Memory */
 
 .new-memory__header {
