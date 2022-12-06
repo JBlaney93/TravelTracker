@@ -32,7 +32,7 @@ body {
 
 .add_button:hover {
     background-color: #1fc71f;
-    transition: all ease .3s;
+    transition: all ease .5s;
     cursor: pointer;
     font-size: 0.875rem;
 }
@@ -50,7 +50,7 @@ body {
 
 .delete_button:hover {
     background-color: #f45a3e;
-    transition: all ease .3s;
+    transition: all ease .5s;
     cursor: pointer;
     font-size: 0.875rem;
 }
@@ -67,8 +67,8 @@ body {
 }
 
 .view_button:hover {
-    background-color: rgb(64, 87, 207);
-    transition: all ease .3s;
+    background-color: #0079ef;
+    transition: all ease .5s;
     cursor: pointer;
     font-size: 0.875rem;
 }
@@ -76,9 +76,9 @@ body {
 /* header */
 
 .header {
-    background-color: #273336;
+    background-color: #0f172a;
     color: white;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 
 .header__title {
@@ -88,7 +88,7 @@ body {
 }
 
 .nav-bar {
-    background-color: #4C5F6B;
+    background-color: #475569;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -122,12 +122,36 @@ body {
     background-color: #aeaeae;
 }
 
+.footer {
+
+    background-color: #0f172a;
+    color:white;
+    padding: 15px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.footer__text {
+    margin-top: 0;
+    padding: 0;
+    font-size: 6px;
+}
+
 /* main */
 
 /* Homepage/index */
 
 .index-header {
     font-weight: 400;
+    margin: 10px 0;
+}
+
+.index-body {
+    background-color: white;
+    padding: 5px 20px 20px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
 }
 
 /* Users */
@@ -256,9 +280,16 @@ body {
 /* Country */
 
 .country__header {
+    font-weight: 100;
+    font-size: 32px;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.country__header-item {
     font-weight: 400;
     font-size: 22px;
-    margin: 10px 0;
+    margin: 0 0 10px 0;
     padding: 0;
 }
 

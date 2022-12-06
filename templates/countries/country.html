@@ -2,24 +2,32 @@
 
 {% block content %}
 
-    <h3 class="country__header">Country</h3>
-    <p class="country__p">{{ country.name }}</p>
+    <section class="countries-header">
+        <h3 class="country__header">{{ country.name }}</h3>
+        
+        <p><a href="/countries/edit/{{ country.id }}" class="view_button">Edit</a></p>
+    </section>
 
-    <h3 class="country__header">Cities</h3>
-    <p class="country__p">{{ country.cities }}</p>
+    <!-- <p class="country__p">{{ country.name }}</p> -->
 
-    <h3 class="country__header">Visited</h3>
-    <p class="country__p">{{ country.visited }}</p>
+    <div class="countries__item">
 
-    {% for memory in memories %}
-        <a href="/users/{{ memory.user.id }}">{{ memory.user.name }}</a>
-        <!-- <a href="/users/{{ memory.user.id }}">{{ memory.user.id }}</a> -->
-    {% endfor %}
+        <h3 class="country__header-item">Cities</h3>
+        <p class="country__p">{{ country.cities }}</p>
 
-    <!-- {% for user in users %}
-        <a href="/users/{{ user.id }}">{{ user.user.name }}</a>
-    {% endfor %} -->
+        <h3 class="country__header-item">Visited</h3>
+        <p class="country__p">{{ country.visited }}</p>
 
-    <p><a href="/countries/edit/{{ country.id }}" class="view_button">Edit</a></p>
+        <p>These users have visited this country, click to see their memories:</p>
+        {% for memory in memories %}
+            <a href="/users/{{ memory.user.id }}" class="view_button">{{ memory.user.name }}</a>
+            <!-- <a href="/users/{{ memory.user.id }}">{{ memory.user.id }}</a> -->
+        {% endfor %}
+        <!-- {% for user in users %}
+            <a href="/users/{{ user.id }}">{{ user.user.name }}</a>
+        {% endfor %} -->
+    </div>
+
+    
 
 {% endblock %}

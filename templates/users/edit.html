@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>add edit feature here</p>
+    
+    <h2 class="new-user__header">Update User</h2>
 
     <form action="/users/{{ user.id }}" method="post">
 
-        <label for="user_name">Name</label>
-        <input type="text" name="user_name" id="user_name" value="{{ user.name }}"><br>
+        <!-- <label for="user_name">Name</label> -->
+        <input type="text" name="user_name" id="user_name" value="{{ user.name }}" class="input-box"><br>
 
         <input type="submit" value="Save" class="add_button">
 
