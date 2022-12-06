@@ -6,14 +6,14 @@
     <form action="/memories" method="post">
        
         <label for="user">Select Saved User</label>
-            <select name="user_id" id="user">
+            <select name="user_id" id="user" class="select-box">
                 {% for user in users %}
                     <option value="{{ user.id }}">{{ user.name }}</option>
                 {% endfor %}
             </select><br>
 
         <label for="country">Select Saved Country</label>
-            <select name="country_id" id="country">
+            <select name="country_id" id="country" class="select-box">
                 {% for country in countries %}
                     <option value="{{ country.id }}">{{ country.name }}</option>
                 {% endfor %}
@@ -23,7 +23,7 @@
         <!-- <label for="memory">Memory</label> -->
         <textarea type="text" name="memory" id="memory" rows="10" cols="60" placeholder="Memory..."></textarea><br>
 
-        <input type="submit" value="Save Memory" class="add_button">
+        <input type="submit" value="Save" class="add_button">
 
     </form>
 {% endblock %}

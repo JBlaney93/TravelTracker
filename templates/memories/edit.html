@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>add edit feature here</p>
+
+    <h2 class="new-country__header">Update Memory</h2>
 
     <form action="/memories/{{ memory.id }}" method="post">
 
-        <input type="text" name="memory" id="memory" value="{{ memory.memory }}"></textarea>
+        <input type="text" name="memory" id="memory" value="{{ memory.memory }}" class="input-box-large"></textarea><br>
 
-        <select name="user_id" id="user">
+        <select name="user_id" id="user" class="select-box">
             {% for user in users %}
             <option value="{{ user.id }}">{{ user.name }}</option>
             {% endfor %}
-        </select>
-
-        <select name="country_id" id="country">
+        </select><br>
+        
+        <select name="country_id" id="country" class="select-box">
             {% for country in countries %}
             <option value="{{ country.id }}">{{ country.name }}</option>
             {% endfor %}
-        </select>
+        </select><br>
+        
 
-        <input type="submit" value="Save Memory" class="add_button">
+        <input type="submit" value="Save" class="add_button">
 
     </form>
 {% endblock %}

@@ -73,6 +73,23 @@ body {
     font-size: 0.875rem;
 }
 
+.input-box-large {
+    width: 100%;
+    height: 1.5625rem;
+    margin-bottom: 1rem;
+    border-width: 0.0625rem;
+    border-radius: 0.25rem;
+}
+
+.select-box {
+    width: 10rem;
+    height: 1.5625rem;
+    margin-bottom: 1rem;
+    border-width: 0.0625rem;
+    border-radius: 0.25rem;
+}
+
+
 /* header */
 
 .header {
@@ -352,11 +369,13 @@ body {
 }
 
 .memories__item-name{
+    text-decoration: none;
+    font-weight: lighter;
     font-size: 12px;
     text-transform: uppercase;
     color: rgb(196, 195, 195);
     padding: 0;
-    margin: 4px 0 0 0;
+
 }
 
 .memories__item-buttons {

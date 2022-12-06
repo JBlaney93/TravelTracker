@@ -12,7 +12,7 @@
 
                 <p class="memories__item-country">{{ memory.country.name }}</p>
 
-                <p class="memories__item-name">{{ memory.user.name }}</p>
+                <a href="/users/{{ memory.user.id }}" class="memories__item-name">{{ memory.user.name }}</a>
 
                 <p>{{ memory.memory }}</p>
 
