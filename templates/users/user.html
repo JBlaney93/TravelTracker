@@ -9,7 +9,8 @@
     </section>
 
     <ul class="memories__list">
-        {% for memory in memories %}
+        {% for memory in memories if user.id == memory.user.id %}
+        
             <li class="memories__item">
                 <p class="memories__item-country">{{ memory.country.name }}</p>
                 <p>{{ memory.memory }}</p>
