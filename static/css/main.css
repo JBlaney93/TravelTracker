@@ -93,7 +93,7 @@ body {
 /* header */
 
 .header {
-    background-color: #0f172a;
+    background-color: #111827;
     color: white;
     padding: 2rem 0;
 }
@@ -105,7 +105,7 @@ body {
 }
 
 .nav-bar {
-    background-color: #475569;
+    background-color: #374151;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -138,6 +138,8 @@ body {
 .nav-bar__link:hover {
     background-color: #aeaeae;
 }
+
+/* Footer */
 
 .footer {
 
