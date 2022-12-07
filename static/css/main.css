@@ -4,6 +4,13 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: #F5F5F5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .container {
@@ -23,7 +30,7 @@ body {
     appearance: none;
     background-color: var(--add);
     border: 0;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     padding: 0.5rem;
     color: white;
     text-decoration: none;
